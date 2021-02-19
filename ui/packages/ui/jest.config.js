@@ -6,7 +6,7 @@ module.exports = {
     transform: {
         "^.+\\.ts$": "ts-jest"
     },
-    testRegex: "(/tests/.*.(test|spec)).(jsx?|tsx?)$",
+    testRegex: "(/__tests__/.*.(test|spec)).(jsx?|tsx?|js)$",
     moduleFileExtensions: [
         "ts",
         "tsx",
@@ -17,7 +17,7 @@ module.exports = {
     ],
     collectCoverage: true,
     coveragePathIgnorePatterns: [
-        "(tests/.*.mock).(jsx?|tsx?)$"
+        "(__tests__/.*.mock).(jsx?|tsx?)$"
     ],
     verbose: true
 };
