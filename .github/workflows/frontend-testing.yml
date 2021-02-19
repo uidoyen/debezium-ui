@@ -1,0 +1,26 @@
+name: Test Debezium UI Frontend
+
+on:
+  push:
+    branches:
+      - smokeTest
+    paths:
+      - 'ui/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      DEBEZIUM_VERSION: "v1.5.0.Alpha1"
+    steps:
+      - name: Checkout Debezium UI
+        uses: actions/checkout@v2
+        with:
+          path: dbzui
+      - name: Checkout Debezium UI
+        uses: actions/cache@v1
+        with:
+          path: ~/.yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-

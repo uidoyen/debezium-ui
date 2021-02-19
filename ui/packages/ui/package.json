@@ -15,7 +15,8 @@
     "lint": "tslint -c ./tslint.json --project .",
     "build:bundle-profile": "webpack --profile --json > stats.json",
     "bundle-profile:analyze": "yarn build:bundle-profile && webpack-bundle-analyzer ./stats.json",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "test": "jest --config ./jest.config.js --rootDir --silent"
   },
   "devDependencies": {
     "@types/enzyme": "^3.9.0",
