@@ -31,9 +31,9 @@ jobs:
           restore-keys: |
             dbzui-${{ runner.os }}-yarn-
 
-      - name: Yarn Install
+      - name: Debezium UI Test
         working-directory: './dbzui/ui'
-        run: yarn install
-      - name: Yarn build
-        working-directory: './dbzui/ui'
-        run: yarn build
+        run: |
+          yarn install
+          yarn build
+          yarn test
