@@ -32,8 +32,8 @@ jobs:
             dbzui-${{ runner.os }}-yarn-
 
       - name: Yarn Install
-        working-directory: './dbzui/ui/packages/ui'
+        working-directory: './dbzui/ui'
         run: yarn install
-      - name: Yarn test
-        working-directory: './dbzui/ui/packages/ui'
-        run: yarn test
+      - name: Yarn build
+        working-directory: './dbzui/ui'
+        run: yarn build
