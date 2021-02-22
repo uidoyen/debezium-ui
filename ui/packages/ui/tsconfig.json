@@ -27,10 +27,9 @@
       "@pf4-assets/*": ["node_modules/@patternfly/react-core/dist/styles/assets/*"]
     },
   },
-  "rootDir": "./src",
   "include": [
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "jest.env.js"  ],
   "exclude": ["node_modules"]
 }
