@@ -21,7 +21,8 @@
     "clean": "lerna run clean",
     "prebuild": "yarn lint",
     "build": "lerna run build",
-    "start": "lerna run start --scope=@debezium/ui"
+    "start": "lerna run start --scope=@debezium/ui",
+    "test": "lerna run test"
   },
   "husky": {
     "hooks": {

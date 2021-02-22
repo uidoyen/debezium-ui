@@ -21,16 +21,16 @@
     "skipLibCheck": false,
     "allowJs": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "resolveJsonModule": true,
     "paths": {
-      "@pf4-assets/*": ["node_modules/@patternfly/react-core/dist/styles/assets/*"]
+      "@pf4-assets/*": ["node_modules/@patternfly/react-core/dist/styles/assets/*"],
+      "@/*":["./src/*"]
     },
   },
   "include": [
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "jest.env.js"  ],
   "exclude": ["node_modules"]
 }
