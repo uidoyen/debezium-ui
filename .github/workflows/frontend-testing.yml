@@ -34,5 +34,6 @@ jobs:
       - name: Debezium UI Test
         working-directory: './dbzui/ui'
         run: |
+          yarn install
           yarn build
           yarn test
