@@ -1,0 +1,39 @@
+name: Test Debezium UI Frontend
+
+on:
+  push:
+    branches:
+      - smokeTest
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Debezium main repository
+        uses: actions/checkout@v2
+        with:
+          repository: debezium/debezium-ui
+          path: debezium-ui
+
+      - name: Checkout Debezium UI
+        uses: actions/checkout@v2
+        with:
+          path: dbzui
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache local Yarn repository
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: dbzui-${{ runner.os }}-yarn-${{ hashFiles('dbzui/ui/yarn.lock') }}
+          restore-keys: |
+            dbzui-${{ runner.os }}-yarn-
+
+      - name: Debezium UI Test
+        working-directory: './dbzui/ui'
+        run: |
+          yarn install
+          yarn build
+          yarn test
