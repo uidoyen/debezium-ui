@@ -35,5 +35,6 @@ jobs:
         working-directory: './dbzui/ui'
         run: |
           yarn install
+           yarn lint
           yarn build
           yarn test
