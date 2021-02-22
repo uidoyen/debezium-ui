@@ -3,7 +3,7 @@ name: Test Debezium UI Frontend
 on:
   push:
     branches:
-      - smokeTest
+      - smokeTesting
 jobs:
   test:
     runs-on: ubuntu-latest
