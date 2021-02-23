@@ -16,7 +16,7 @@
     "build:bundle-profile": "webpack --profile --json > stats.json",
     "bundle-profile:analyze": "yarn build:bundle-profile && webpack-bundle-analyzer ./stats.json",
     "clean": "rimraf dist",
-    "test": "jest --config ./jest.config.js --silent"
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.12.17",
@@ -79,10 +79,14 @@
     "@types/jest-environment-puppeteer": "^4.4.1",
     "@types/puppeteer": "^5.4.3",
     "formik": "^2.1.5",
+    "global": "^4.4.0",
     "i18next": "^19.4.4",
     "i18next-browser-languagedetector": "^4.0.1",
+    "jest-cli": "^26.6.3",
     "jest-fetch-mock": "^3.0.3",
+    "jest-puppeteer": "^4.4.0",
     "lodash": "^4.17.20",
+    "puppeteer": "^7.1.0",
     "react": "16.13.1",
     "react-ace": "8.1.0",
     "react-dom": "16.13.1",

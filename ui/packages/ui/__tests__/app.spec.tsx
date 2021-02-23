@@ -1,6 +1,11 @@
 import { shallow } from "enzyme";
 import React from "react";
+import { PageLoader } from "../src/app/components/PageLoader";
 
-it("renders without crashing", () => {
-  shallow(<h1>App test</h1>);
+describe('renders without crashing', () => {
+  it('should render correctly ', () => {
+    const component = shallow(<PageLoader />);
+  
+    expect(component).toMatchSnapshot();
+  });
 });
